@@ -107,6 +107,14 @@ DECLARE
     _id INTEGER;
     _asset_name TEXT;
 BEGIN
+    -- Coalesce nulls to empty strings (Benthos sends null for missing hierarchy levels)
+    _enterprise := COALESCE(_enterprise, '');
+    _site := COALESCE(_site, '');
+    _area := COALESCE(_area, '');
+    _line := COALESCE(_line, '');
+    _workcell := COALESCE(_workcell, '');
+    _origin_id := COALESCE(_origin_id, '');
+
     -- Build asset_name from non-empty parts
     _asset_name := _enterprise;
     IF _site <> '' THEN _asset_name := _asset_name || '.' || _site; END IF;
