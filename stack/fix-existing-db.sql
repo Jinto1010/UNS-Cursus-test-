@@ -18,7 +18,7 @@ CREATE OR REPLACE FUNCTION get_asset_id(
     _line TEXT DEFAULT '',
     _workcell TEXT DEFAULT '',
     _origin_id TEXT DEFAULT ''
-) RETURNS INTEGER AS $$
+) RETURNS INTEGER AS $func$
 DECLARE
     _id INTEGER;
     _asset_name TEXT;
@@ -51,4 +51,4 @@ BEGIN
 
     RETURN _id;
 END;
-$$ LANGUAGE plpgsql;
+$func$ LANGUAGE plpgsql;
