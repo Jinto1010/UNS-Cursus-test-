@@ -1,0 +1,24 @@
+# upstream is voor wijzigingen bij luke weg te halen,  pull bij github van me zelf (als je op meerdere pc's werkt) en push naar eigen github weg schrijven
+# voor nieuwe wijzigingen op te halen
+| Command                         | Wat doet het                     | Wanneer gebruik je het               | Belangrijk om te weten               |
+| ------------------------------- | -------------------------------- | ------------------------------------ | ------------------------------------ |
+| `git add <file>`                | Zet bestand klaar voor commit    | Als je specifiek iets wilt toevoegen | Veilig en gecontroleerd              |
+| `git add .`                     | Zet ALLE wijzigingen klaar       | Als je alles wilt committen          | ⚠️ Kan ook ongewenste files meenemen |
+| `git commit -m "msg"`           | Slaat wijzigingen op in Git      | Na `git add`                         | Zit nog alleen lokaal                |
+| `git push`                      | Stuurt jouw commits naar GitHub  | Als je werk wilt uploaden            | Werkt alleen als gekoppeld           |
+| `git pull`                      | Haalt updates op + merge         | Als je repo wilt updaten             | Combineert fetch + merge             |
+| `git fetch`                     | Haalt updates op (zonder merge)  | Als je eerst wilt kijken             | Verandert je files nog niet          |
+| `git status`                    | Laat zien wat er veranderd is    | Altijd handig voor controle          | Beste eerste check                   |
+| `git remote -v`                 | Laat koppeling met GitHub zien   | Check of repo “live” is              | Toont origin/upstream                |
+| `git clone <url>`               | Download repo van GitHub         | Eerste keer ophalen                  | Maakt nieuwe map                     |
+| `git branch -vv`                | Laat branch + koppeling zien     | Check tracking                       | Handig bij problemen                 |
+| `git pull origin main`          | Haalt updates van jouw repo      | Normaal gebruik                      | Meest gebruikt                       |
+| `git pull upstream main`        | Haalt updates van originele repo | Bij forks                            | Alleen als upstream bestaat          |
+| `git remote add upstream <url>` | Voegt originele repo toe         | Bij forks instellen                  | Nodig voor updates van origineel     |
+| `git restore --staged <file>`   | Haalt bestand uit staging        | Als je iets fout hebt toegevoegd     | Undo voor `git add`                  |
+
+
+# beste om te doen
+git fetch upstream
+git merge upstream/master
+
